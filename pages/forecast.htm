@@ -1,0 +1,28 @@
+<a href="/index.htm">Back to search</a>
+
+<h2>Forecast for {{ city }}, for {{ days }} day(s).</h2>
+<hr />
+<h3>Choose number of days</h3>
+
+<label class="radio-inline">
+  <input type="radio" ng-model="days" value="1"> 1
+</label>
+<label class="radio-inline">
+  <input type="radio" ng-model="days" value="2"> 2
+</label>
+<label class="radio-inline">
+  <input type="radio" ng-model="days" value="3"> 3
+</label>
+
+<hr />
+
+
+<div ng-repeat="w in weatherResult.list">
+
+    <div class="row">
+        <div class="col-md-12">
+            <weather-report weather-day="w" convert-to-standard="convertToFarenheit(daytimeTemp)" convert-to-date="convertToDate(dt)" date-format="d MMM, y"></weather-report>
+        </div>
+    </div>
+
+</div>
