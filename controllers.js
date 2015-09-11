@@ -35,9 +35,9 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
         
     });
         
-    $scope.convertToFarenheit = function(degK) {
+    $scope.convertToCelcius = function(degK) {
     
-        return Math.round((1.8 * (degK - 273)) + 32);
+        return Math.round(degK - 273);
     
     };
     
