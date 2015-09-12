@@ -15,13 +15,27 @@
 </label>
 
 <hr />
-
-
+ 
+<h3>Choose units</h3>
+<label class="radio-inline">
+  <input type="radio" ng-model="units" value="metric"> C
+</label>
+<label class="radio-inline">
+  <input type="radio" ng-model="units" value="imperial"> F
+</label>
+<hr />
 <div ng-repeat="w in weatherResult.list">
 
     <div class="row">
         <div class="col-md-12">
-            <weather-report weather-day="w" convert-to-standard="convertToFarenheit(daytimeTemp)" convert-to-date="convertToDate(dt)" date-format="d MMM, y"></weather-report>
+            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ convertToDate(w.dt) | date: 'd MMM, y' }}</h3>
+    </div>
+    <div class="panel-body">
+        Daytime temperature: {{ w.temp.day }}
+    </div>
+</div>
         </div>
     </div>
 
